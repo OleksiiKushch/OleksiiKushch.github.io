@@ -73,7 +73,7 @@ section {
 
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
@@ -297,4 +297,63 @@ footer {
     color: #999;
     font-size: 0.9rem;
     border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 640px) {
+    header {
+        position: fixed;
+    }
+
+    nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    nav ul li:not(.nav-icons) a {
+        font-size: 0.85rem;
+    }
+
+    .nav-icons a svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .education-details,
+    .project-details {
+        padding: 1rem;
+    }
+
+    .education-details dl,
+    .project-details dl {
+        grid-template-columns: 1fr;
+        gap: 0.25rem 0;
+    }
+
+    .education-details dt,
+    .project-details dt {
+        margin-top: 0.5rem;
+    }
+
+    .education-details dt:first-child,
+    .project-details dt:first-child {
+        margin-top: 0;
+    }
+}
+
+.word-break {
+    display: none;
+}
+
+@media (max-width: 380px) {
+    .word-break {
+        display: inline;
+    }
 }
